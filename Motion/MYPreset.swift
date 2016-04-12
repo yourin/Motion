@@ -9,6 +9,7 @@
 import UIKit
 
 class MYPreset {
+    
     var presetName:String!
     var myDirectColor:MYDirectColor?
     var date:NSDate!

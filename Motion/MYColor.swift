@@ -10,6 +10,7 @@
 import UIKit
 
 class MYColor {
+    var tag:Int!
     var red:Double!
     var green:Double!
     var blue:Double!
@@ -20,6 +21,7 @@ class MYColor {
         self.green = 1.0
         self.blue = 1.0
         self.alpha = 1.0
+        self.tag  = 0
 
         
     }
@@ -30,6 +32,7 @@ class MYColor {
         self.green = Double(green)
         self.blue = Double(blue)
         self.alpha = Double(alpha)
+        self.tag  = 0
     }
     
     init(red: Double, green: Double, blue: Double, alpha: Double) {
@@ -37,6 +40,7 @@ class MYColor {
         self.green = Double(green)
         self.blue = Double(blue)
         self.alpha = Double(alpha)
+        self.tag  = 0
     }
     
     func chenge_UIColor() -> UIColor{

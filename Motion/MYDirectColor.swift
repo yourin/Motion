@@ -10,6 +10,8 @@ import UIKit
 
 class MYDirectColor {
     
+    var tag:Int!
+    var name:String!
     var stop:MYColor!
     var up  :MYColor!
     var down:MYColor!
@@ -23,6 +25,8 @@ class MYDirectColor {
         self.down   = MYColor()
         self.left   = MYColor()
         self.right  = MYColor()
+        self.name = ""
+        self.tag = 0
     }
     
 //    class func chenge_Dictionary() ->[String:[String:Double]]{

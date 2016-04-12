@@ -72,6 +72,9 @@
                                     <constraint firstAttribute="width" constant="59" id="v5R-qb-JBc"/>
                                 </constraints>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="action_AddButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wwl-kb-9vJ"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D24-kl-gBL">
                                 <rect key="frame" x="100" y="176" width="120" height="30"/>
@@ -107,6 +110,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="buttonAdd" destination="g8C-WJ-iJk" id="x56-0D-suq"/>
                         <outlet property="iv_Down" destination="s7j-tx-cFz" id="hTh-0r-AMr"/>
                         <outlet property="iv_Left" destination="3eF-iv-Zsg" id="ejh-5M-Joh"/>
                         <outlet property="iv_Right" destination="PBq-eD-l1e" id="hhg-cu-eSi"/>

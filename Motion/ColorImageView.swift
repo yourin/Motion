@@ -9,6 +9,9 @@
 import UIKit
 
 class ColorImageView {
+    
+    var tag:Int? 
+    
     var baseView:UIView!
     var up:UIImageView! = UIImageView()
     var down:UIImageView! = UIImageView()
