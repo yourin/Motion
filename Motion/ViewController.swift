@@ -145,7 +145,7 @@ class ViewController: UIViewController ,UITextFieldDelegate{
             
             
             _scrollView_Presets.addSubview(_colorImageView.baseView)
-            _colorImageView.baseView.center = _scrollView_Presets.center
+//            _colorImageView.baseView.center = _scrollView_Presets.center
 //            self.view.addSubview(_colorImageView.baseView)
 //            _colorImageView.baseView.center = self.view.center
             
