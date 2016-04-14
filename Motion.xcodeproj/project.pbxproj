@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D244B541CC042FA00BC0BE2 /* ColorChengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244B531CC042FA00BC0BE2 /* ColorChengeView.swift */; };
 		3D82D0941C9C2DB2001B4494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D82D0931C9C2DB2001B4494 /* AppDelegate.swift */; };
 		3D82D0961C9C2DB2001B4494 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D82D0951C9C2DB2001B4494 /* ViewController.swift */; };
 		3D82D0991C9C2DB2001B4494 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D82D0971C9C2DB2001B4494 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D244B531CC042FA00BC0BE2 /* ColorChengeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorChengeView.swift; sourceTree = "<group>"; };
 		3D82D0901C9C2DB2001B4494 /* Motion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D82D0931C9C2DB2001B4494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D82D0951C9C2DB2001B4494 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				3D82D0931C9C2DB2001B4494 /* AppDelegate.swift */,
 				3D82D0951C9C2DB2001B4494 /* ViewController.swift */,
 				3D82D0971C9C2DB2001B4494 /* Main.storyboard */,
+				3D244B531CC042FA00BC0BE2 /* ColorChengeView.swift */,
 				3D96669E1CAA2A9B00F22B88 /* MYColor.swift */,
 				3D9666A11CAB80CA00F22B88 /* MYDirectColor.swift */,
 				3D9666A31CACCDD500F22B88 /* MYPreset.swift */,
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D9666A41CACCDD500F22B88 /* MYPreset.swift in Sources */,
+				3D244B541CC042FA00BC0BE2 /* ColorChengeView.swift in Sources */,
 				3D82D0961C9C2DB2001B4494 /* ViewController.swift in Sources */,
 				3D96669F1CAA2A9B00F22B88 /* MYColor.swift in Sources */,
 				3D9666A21CAB80CA00F22B88 /* MYDirectColor.swift in Sources */,

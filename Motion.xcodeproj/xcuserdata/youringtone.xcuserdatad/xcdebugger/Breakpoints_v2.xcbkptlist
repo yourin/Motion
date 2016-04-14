@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Motion/ViewController.swift"
-            timestampString = "482191673.628009"
+            timestampString = "482365021.378976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "actionSegmentPresets(_:)"
             landmarkType = "5">
          </BreakpointContent>

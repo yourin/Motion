@@ -29,6 +29,7 @@ var _scrollView_Presets = UIScrollView()
 class ViewController: UIViewController ,UITextFieldDelegate{
     @IBOutlet weak var segmentPresets: UISegmentedControl!
     
+    @IBOutlet weak var buttonColorChenge: UIButton!
     @IBOutlet weak var buttonAdd: UIButton!
     @IBOutlet weak var iv_Up: UIImageView!
     @IBOutlet weak var iv_Stop: UIImageView!
@@ -137,6 +138,51 @@ class ViewController: UIViewController ,UITextFieldDelegate{
     
 //MARK: - IBAction
     
+    @IBAction func action_ColorChenge(sender: UIButton) {
+        
+        for view in self.view.subviews {
+            if view.isKindOfClass(ColorChengeView){
+                print("あります")
+            }else{
+                print("なし")
+            }
+        }
+        
+        func animation(view:ColorChengeView){
+            UIView.animateWithDuration(1,
+                                       animations:
+                {() -> Void in
+                    view.baseView.center = CGPoint(
+                        x: self.view.center.x,
+                        y: (self.view.frame.maxY / 3) * 2)
+                    
+                    
+                }
+            )
+            
+        }
+        
+        
+        //color chaenge viewを作成　表示
+        let colorChengeView = ColorChengeView()
+        //
+        colorChengeView.baseView.center =
+            CGPoint(x: 0 - colorChengeView.baseView.frame.midX, //左側に隠す
+                    y: (self.view.frame.maxY / 3) * 2)
+        self.view.addSubview(colorChengeView.baseView)
+        
+        animation(colorChengeView)
+        
+        //
+        //
+        //
+        //
+        //
+        
+        
+        
+        
+    }
     @IBAction func action_AddButton(sender: UIButton) {
        
         //新規作成

@@ -85,6 +85,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbz-4s-oOX">
+                                <rect key="frame" x="20" y="387" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action_ColorChenge:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iNc-AL-QOh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -97,9 +104,11 @@
                             <constraint firstItem="o1q-H7-Ypp" firstAttribute="leading" secondItem="EFM-oy-S0V" secondAttribute="leading" id="NDF-3J-74y"/>
                             <constraint firstItem="PBq-eD-l1e" firstAttribute="leading" secondItem="s7j-tx-cFz" secondAttribute="trailing" id="QaH-lE-O7g"/>
                             <constraint firstItem="IXK-c8-wKJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="RAi-wQ-xhU"/>
+                            <constraint firstItem="jbz-4s-oOX" firstAttribute="bottom" secondItem="g8C-WJ-iJk" secondAttribute="bottom" id="VkJ-J2-8Cb"/>
                             <constraint firstAttribute="bottom" secondItem="IXK-c8-wKJ" secondAttribute="bottom" constant="20" symbolic="YES" id="WRh-4e-DJL"/>
                             <constraint firstItem="3eF-iv-Zsg" firstAttribute="bottom" secondItem="s7j-tx-cFz" secondAttribute="bottom" id="YjQ-4B-Zcx"/>
                             <constraint firstItem="IXK-c8-wKJ" firstAttribute="centerX" secondItem="s7j-tx-cFz" secondAttribute="centerX" id="fmS-rq-ePG"/>
+                            <constraint firstItem="jbz-4s-oOX" firstAttribute="leading" secondItem="IXK-c8-wKJ" secondAttribute="leading" id="giF-BO-Rek"/>
                             <constraint firstItem="g8C-WJ-iJk" firstAttribute="trailing" secondItem="IXK-c8-wKJ" secondAttribute="trailing" id="ioU-gN-XBt"/>
                             <constraint firstItem="s7j-tx-cFz" firstAttribute="top" secondItem="EFM-oy-S0V" secondAttribute="bottom" id="vIl-Pb-xi9"/>
                             <constraint firstItem="D24-kl-gBL" firstAttribute="centerX" secondItem="IXK-c8-wKJ" secondAttribute="centerX" id="xgf-SA-Qef"/>
@@ -111,6 +120,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="buttonAdd" destination="g8C-WJ-iJk" id="x56-0D-suq"/>
+                        <outlet property="buttonColorChenge" destination="jbz-4s-oOX" id="GYO-AZ-xgK"/>
                         <outlet property="iv_Down" destination="s7j-tx-cFz" id="hTh-0r-AMr"/>
                         <outlet property="iv_Left" destination="3eF-iv-Zsg" id="ejh-5M-Joh"/>
                         <outlet property="iv_Right" destination="PBq-eD-l1e" id="hhg-cu-eSi"/>
