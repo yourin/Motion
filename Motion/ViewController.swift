@@ -26,15 +26,15 @@ var _aryColorImageView = [ColorImageView]()
 
 var _scrollView_Presets = UIScrollView()
 
-class ViewController: UIViewController ,UITextFieldDelegate{
+class ViewController: UIViewController ,UITextFieldDelegate, UIAlertViewDelegate{
     @IBOutlet weak var segmentPresets: UISegmentedControl!
     
     @IBOutlet weak var buttonAdd: UIButton!
-    @IBOutlet weak var iv_Up: UIImageView!
-    @IBOutlet weak var iv_Stop: UIImageView!
-    @IBOutlet weak var iv_Down: UIImageView!
-    @IBOutlet weak var iv_Left: UIImageView!
-    @IBOutlet weak var iv_Right: UIImageView!
+    @IBOutlet weak var iv_Up    : UIImageView!
+    @IBOutlet weak var iv_Stop  : UIImageView!
+    @IBOutlet weak var iv_Down  : UIImageView!
+    @IBOutlet weak var iv_Left  : UIImageView!
+    @IBOutlet weak var iv_Right : UIImageView!
     @IBOutlet weak var tf_segmentNames: UITextField!
     
     var _segmentPresetsIndexNow:Int! = 0
@@ -57,7 +57,9 @@ class ViewController: UIViewController ,UITextFieldDelegate{
         
         directColor.chenge_LeftColor(redColor)
         directColor.chenge_RightColor(redColor)
-        //
+        
+        
+        //user defaults に仮のでーた
         _ud.setObject(directColor.chenge_Dictionary(), forKey: "0")
         _ud.setObject(directColor.chenge_Dictionary(), forKey: "1")
         _ud.setObject(directColor.chenge_Dictionary(), forKey: "2")
@@ -71,11 +73,12 @@ class ViewController: UIViewController ,UITextFieldDelegate{
         
         self.iv_SetColor()
         
-        let scrViewRect = CGRect(origin: CGPointZero, size: CGSize(width: self.view.frame.width, height: 100))
-        
+        let origin = CGPoint(x: 0, y: 22)
+        let scrViewRect = CGRect(origin: origin, size: CGSize(width: self.view.frame.width, height: 130))
+        //スクロールビューの設定
         _scrollView_Presets = UIScrollView(frame: scrViewRect)
-        _scrollView_Presets.center = self.view.center
-        _scrollView_Presets.contentSize = CGSize(width: 100, height: 130)
+//        _scrollView_Presets.center = self.view.center
+        _scrollView_Presets.contentSize = CGSize(width: 500, height: 130)
         _scrollView_Presets.backgroundColor = UIColor.orangeColor()
         self.view.addSubview(_scrollView_Presets)
         
@@ -126,7 +129,9 @@ class ViewController: UIViewController ,UITextFieldDelegate{
             animations:
             {() -> Void in
                 civ.baseView.center = CGPoint(
-                    x: civ.baseView.center.x - (90 * CGFloat(_aryColorImageView.count)),
+                    x: civ.baseView.center.x + 90,
+                    
+//                    x: civ.baseView.center.x + (90 * CGFloat(_aryColorImageView.count)),
                     y: civ.baseView.center.y)
                 print("ary = \(_aryColorImageView.count) x = \(civ.baseView.center.x)")
 
@@ -141,39 +146,80 @@ class ViewController: UIViewController ,UITextFieldDelegate{
        
         //新規作成
         func make(){
-            let _colorImageView = ColorImageView.init(color: UIColor.blackColor())
+//            let _colorImageView = ColorImageView.init(color: UIColor.blackColor())
+            let _colorImageView = ColorImageView(
+                upColor:    iv_Up.backgroundColor!,
+                downColor:  iv_Down.backgroundColor!,
+                stopColor:  iv_Stop.backgroundColor!,
+                leftColor:  iv_Left.backgroundColor!,
+                rightColor: iv_Right.backgroundColor!
+            )
+        
+            _colorImageView.name = tf_segmentNames.text!
+            _colorImageView.tag = _aryColorImageView.count
             
+            print("colorImageViewTag = \(_colorImageView.tag)")
+            _colorImageView.baseView.transform = CGAffineTransformMakeScale(0.5, 0.5)
+            _colorImageView.baseView.center = CGPoint(x: 50, y:65)
             
+            let button = UIButton()
+            _colorImageView.baseView.addSubview(button)
             _scrollView_Presets.addSubview(_colorImageView.baseView)
-            _colorImageView.baseView.center = _scrollView_Presets.center
-//            self.view.addSubview(_colorImageView.baseView)
-//            _colorImageView.baseView.center = self.view.center
             
             _aryColorImageView.append(_colorImageView)
             
         }
 
+        
+        if  tf_segmentNames.text != "" {
+            //UIAlertController使用
 
-        if  _aryColorImageView.count > 0 {
             
-            let count = _aryColorImageView.count - 1
-            print("count = \(count)")
             
-            for i in 0...count {
-                let civ = _aryColorImageView[i] as ColorImageView
-                self.animation(civ)
+//            let alart = UIAlertController.init(title: "No Preset", message: "Enter PresetName", preferredStyle: .Alert)
+//            presentViewController(alart, animated: true, completion: nil)
+            
+//            let alart = UIAlertView.init(title: "No Preset Name", message: "Plese Enter Preset Name", delegate: self, cancelButtonTitle: "OK", otherButtonTitles: nil, nil)
+            
+            //先に作成した ColorImageView をずらす
+            if  _aryColorImageView.count > 0 {
+                let count = _aryColorImageView.count - 1
+                print("count = \(count)")
+                
+                for i in 0...count {
+                    let civ = _aryColorImageView[i] as ColorImageView
+                    self.animation(civ)
+                    
+                }
                 
             }
-        
+            make()
+            
+        }else{
+        print("no text")
+            let ac = UIAlertController(title: "Title", message: "Message", preferredStyle: .Alert)
+            
+//            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
+//                print("Cancel button tapped.")
+//            }
+            
+            let okAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
+                print("OK button tapped.")
+            }
+            
+//            ac.addAction(cancelAction)
+            ac.addAction(okAction)
+            
+            self.presentViewController(ac, animated: true, completion: nil)
+
         }
-        make()
-//        print(_aryColorImageView.count)
+        
     }
     
     
     @IBAction func actionSegmentPresets(sender: UISegmentedControl) {
         
-        print(__FUNCTION__)
+        print(#function)
 
         print("segment = \(sender.selectedSegmentIndex)")
         

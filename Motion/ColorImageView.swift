@@ -10,7 +10,9 @@ import UIKit
 
 class ColorImageView {
     
-    var tag:Int? 
+    var tag:Int = 0
+    
+    var name = ""
     
     var baseView:UIView!
     var up:UIImageView! = UIImageView()
@@ -19,12 +21,12 @@ class ColorImageView {
     var right:UIImageView! = UIImageView()
     var stop:UIImageView! = UIImageView()
     
-    var upButton:UIButton! = UIButton()
-    var downButton:UIButton! = UIButton()
-    var stopButton:UIButton! = UIButton()
-    var leftButton:UIButton! = UIButton()
-    var rightButton:UIButton! = UIButton()
-    
+//    var upButton:UIButton! = UIButton()
+//    var downButton:UIButton! = UIButton()
+//    var stopButton:UIButton! = UIButton()
+//    var leftButton:UIButton! = UIButton()
+//    var rightButton:UIButton! = UIButton()
+//    
     
     init(){
         
@@ -39,22 +41,21 @@ class ColorImageView {
         size: CGSize(width: 40, height: 240))
         
         
-        
         self.up = UIImageView(frame:square)
-        self.upButton = UIButton(frame: square)
-        self.upButton.center = self.up.center
-        self.upButton.addTarget(self, action: "actionButton:", forControlEvents: UIControlEvents.TouchUpInside)
+//        self.upButton = UIButton(frame: square)
+//        self.upButton.center = self.up.center
+//        self.upButton.addTarget(self, action: Selector("actionButton:"), forControlEvents: UIControlEvents.TouchUpInside)
         
         self.stop = UIImageView(frame:square)
-        self.stopButton = UIButton(frame: square)
+//        self.stopButton = UIButton(frame: square)
         
         
         self.down = UIImageView(frame:square)
-        self.downButton = UIButton(frame: square)
+//        self.downButton = UIButton(frame: square)
         self.left = UIImageView(frame: longSquare)
-        self.leftButton = UIButton(frame: longSquare)
+//        self.leftButton = UIButton(frame: longSquare)
         self.right = UIImageView(frame: longSquare)
-        self.rightButton = UIButton(frame: longSquare)
+//        self.rightButton = UIButton(frame: longSquare)
         
         self.up.center = CGPoint(x:80 , y: 37.5)
         self.stop.center = self.baseView.center
@@ -70,7 +71,7 @@ class ColorImageView {
         self.right.backgroundColor = UIColor.blueColor()
         
         self.baseView.addSubview(self.up)
-        self.up.addSubview(upButton)
+//        self.up.addSubview(upButton)
         self.baseView.addSubview(self.down)
         self.baseView.addSubview(self.stop)
         self.baseView.addSubview(self.left)
@@ -160,19 +161,8 @@ class ColorImageView {
         
     }
 
-
-    
-    
-    
-    
     func actionButton(){
-        print(__FUNCTION__)
+        print(#function)
     }
-    
-    
-    
-    
-    
-    
     
 }
